@@ -124,7 +124,8 @@ For [Lazy](https://github.com/folke/lazy.nvim) users,
         },
         {
             name = "personal",
-            path = "personal-wiki"
+            path = "personal-wiki",
+            index_file = "README.md" -- Optional, defaults to "index.md"
         }
     },
     keys = {
@@ -146,7 +147,8 @@ require('kiwi').setup({
     },
     {
         name = "personal",
-        path = "personal-wiki"
+        path = "personal-wiki",
+        index_file = "README.md" -- Optional, defaults to "index.md"
     }
 })
 -- Note: The path will be created in user home directory

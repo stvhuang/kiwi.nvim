@@ -10,6 +10,7 @@ M.open_wiki_index = function(name)
       for _, v in pairs(config.folders) do
         if v.name == name then
           config.path = v.path
+          config.index_file = v.index_file or "index.md"
         end
       end
     else
@@ -18,7 +19,7 @@ M.open_wiki_index = function(name)
   else
     require("kiwi").setup()
   end
-  local wiki_index_path = vim.fs.joinpath(config.path, "index.md")
+  local wiki_index_path = vim.fs.joinpath(config.path, config.index_file)
   local buffer_number = vim.fn.bufnr(wiki_index_path, true)
   vim.api.nvim_win_set_buf(0, buffer_number)
   local opts = { noremap = true, silent = true, nowait = true }
